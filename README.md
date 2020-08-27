@@ -19,8 +19,11 @@ Once the input folder is set, the detected files will be present in the list bel
   * Bar size: How many units the scale bar will have. Defaults to 50 units.
   * Unit: The unit of measurement to be used. Defaults to micrometer. As a convenience to the user, "um" is automatically replaced by the micrometer sign.
   
-At the bottom of the screen, there are a few buttons. The "Copy Settings to Other Files" button takes the settings of the selected file (files can be selected by clicking on them in the list) and applies them to all the other images. The "Select All" button makes all the images (...)
+At the bottom of the screen, there are a few buttons. The "Copy Settings to Other Files" button takes the settings of the selected file (files can be selected by clicking on them in the list) and applies them to all the other images. The "Select All" button enables the "Do" field on all images, while "Select None" disables the "Do" field on all images (to more easily add scale to a single image in a large list, for instance).
 
+The "Refresh" button at the right of the image list refreshes the file view (in case there were changes to the files). When manually writing the input directory, the user must press this button to update the image list.
+
+Finally, the "Add Scales" button adds scales to all selected images according to the chosen settings.
 
 ## Scalability
 
@@ -31,4 +34,10 @@ The code is presented as a single .py file, as we want to reduce the program's a
 The default amplification values (pixel per unit) are for the specific microscope available at my lab (which I am not allowed to reveal), which will be different for different setups. These default values are present at the top of the code, as ZOOM_10X, ZOOM_50X and ZOOM_100X. Since the setup we use had 3 different objectives (10x, 50x and 100x respectively), it is common for members of this lab to label their images accordingly; e.g. sample_x10.jpg or sample_50x.jpg. Therefore, when reading the file list the program will automatically check for the strings 'x10', 'x50', 'x100', '10x', '50x' and '100x' and will automatically set the scale of the image to the appropriate value. The user is then free to change the scales manually before performing edits on the images.
 
 
-Requirements
+## Requirements
+
+Python 3.x is required. Tested with Python 3.7.3.
+
+Requirements.txt file available.
+
+Requires PyQt 5 (>= 5.13.2) and Pillow (>= 6.2.1).
