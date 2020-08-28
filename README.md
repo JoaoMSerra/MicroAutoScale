@@ -5,7 +5,7 @@ The purpose of this program is to take a bunch of images taken with a microscope
 
 ## Instructions
 
-The program should be simple to use. Open with the Python 3.x interpreter and follow the GUI.
+The program should be simple to use. Download and run the executable (Windows only) or open with the Python 3.x interpreter and follow the GUI.
 
 The input folder is where the images will be pulled from. It defaults to the folder that the program is found in. The user can change this folder either by manually writing the name of the desired folder, or by using the file browser (by pressing the Browse... button). By default, subfolders are not checked for images; this can be changed by checking the "Also edit files in subfolders" checkbox.
 
@@ -32,11 +32,13 @@ Some very questionable design decisions are explained by attempts to make the pr
 The code is presented as a single .py file, as we want to reduce the program's apparent complexity to users, which may not be tech literate, while retaining inter-platform compatibility.
 
 The default amplification values (pixel per unit) are for the specific microscope available at my lab (which I am not allowed to reveal), which will be different for different setups. These default values are present at the top of the code, as ZOOM_10X, ZOOM_50X and ZOOM_100X. Since the setup we use had 3 different objectives (10x, 50x and 100x respectively), it is common for members of this lab to label their images accordingly; e.g. sample_x10.jpg or sample_50x.jpg. Therefore, when reading the file list the program will automatically check for the strings 'x10', 'x50', 'x100', '10x', '50x' and '100x' and will automatically set the scale of the image to the appropriate value. The user is then free to change the scales manually before performing edits on the images.
-
+ 
 
 ## Requirements
 
-Python 3.x is required. Tested with Python 3.7.3.
+The windows executable file is stand-alone.
+
+For the python file, Python 3.x is required. Tested with Python 3.7.3.
 
 Requirements.txt file available.
 
